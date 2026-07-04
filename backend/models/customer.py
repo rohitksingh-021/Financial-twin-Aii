@@ -22,7 +22,7 @@ class CustomerProfile(BaseModel):
     dependents: int = 1
     risk_appetite: RiskAppetite = RiskAppetite.MODERATE
     pan_number: str = "ABCPS1234K"
-    account_number: str = "IDBI0012345678"
+    account_number: str = "FIN0012345678"
 
 
 class Transaction(BaseModel):

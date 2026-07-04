@@ -22,7 +22,7 @@ def get_seed_data() -> CustomerData:
         dependents=1,
         risk_appetite=RiskAppetite.MODERATE,
         pan_number="ABCPS1234K",
-        account_number="IDBI0012345678",
+        account_number="FIN0012345678",
     )
 
     monthly_financials = [
@@ -43,7 +43,7 @@ def get_seed_data() -> CustomerData:
     investments = [
         Investment(id="inv-1", type="MF", name="HDFC Mid-Cap Opportunities Fund", invested_amount=350000, current_value=420000, start_date="2023-06-15", expected_return=14.0),
         Investment(id="inv-2", type="MF", name="SBI Blue Chip Fund (SIP ₹10,000/mo)", invested_amount=240000, current_value=275000, start_date="2024-01-10", expected_return=12.0),
-        Investment(id="inv-3", type="FD", name="IDBI Bank FD — 7.1%", invested_amount=200000, current_value=214200, start_date="2024-06-01", expected_return=7.1),
+        Investment(id="inv-3", type="FD", name="Bank FD — 7.1%", invested_amount=200000, current_value=214200, start_date="2024-06-01", expected_return=7.1),
         Investment(id="inv-4", type="PPF", name="Public Provident Fund", invested_amount=300000, current_value=332000, start_date="2021-04-01", expected_return=7.1),
         Investment(id="inv-5", type="stocks", name="Direct Equity (NIFTY 50 stocks)", invested_amount=150000, current_value=182000, start_date="2023-09-01", expected_return=15.0),
         Investment(id="inv-6", type="NPS", name="National Pension System — Tier 1", invested_amount=120000, current_value=138000, start_date="2022-01-01", expected_return=10.0),
@@ -100,7 +100,7 @@ def _generate_transactions() -> list[Transaction]:
         txns.append(Transaction(date=f"{m}-05", amount=35000, category="Rent", merchant="Landlord", type="debit", channel="NEFT"))
 
         # EMI
-        txns.append(Transaction(date=f"{m}-10", amount=15000, category="Loan EMI", merchant="IDBI Bank", type="debit", channel="NEFT"))
+        txns.append(Transaction(date=f"{m}-10", amount=15000, category="Loan EMI", merchant="Bank", type="debit", channel="NEFT"))
 
         # SIP investments
         sip_amount = 25000 if i < 3 else (28000 if i == 3 else (25000 if i == 4 else 30000 if i == 5 else 32000))
